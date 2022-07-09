@@ -1,27 +1,21 @@
 package com.tiago.sistema.controller;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
-import java.util.List;
-
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import com.tiago.sistema.model.Movimentacao;
 import com.tiago.sistema.model.Usuario;
 
-@RequestMapping("/usuario")
-@RestController
+@Controller
 public class testeController {
 
-//	@GetMapping("/login")
-//	public Usuario login() {
-//		Usuario usuario = new Usuario();
-//		return usuario;
-//	}
-//	
+	@GetMapping("/")
+	public String telaLogin(Model model) {
+		Usuario usuario = new Usuario();
+		model.addAttribute("user", usuario);
+		return "login";
+	}
+
 //	@GetMapping("/movimentacao")
 //	public List<Movimentacao> Movimento(){
 //		Movimentacao movimentacao1 = new Movimentacao((long) 1, "CDC1545", "FIAT", LocalDateTime.parse("2018-07-22 10:35:10", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")),  24.04, 35.00);

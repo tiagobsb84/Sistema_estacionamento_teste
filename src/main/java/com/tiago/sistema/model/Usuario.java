@@ -14,9 +14,9 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String nome = "admin";
-	private String usuario = "admin";
-	private Integer senha = 123456;
+	private String nome;
+	private String usuario;
+	private String senha;
 	
 	public Long getId() {
 		return id;
@@ -27,7 +27,7 @@ public class Usuario {
 	public String getUsuario() {
 		return usuario;
 	}
-	public Integer getSenha() {
+	public String getSenha() {
 		return senha;
 	}
 	
